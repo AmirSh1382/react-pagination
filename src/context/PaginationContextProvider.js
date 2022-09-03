@@ -29,7 +29,6 @@ const paginationReducer = (state , action) => {
             }
             return{
                 ...state,
-                currentPage: state.currentPage,
                 ...setNewPageProducts(state , state.currentPage)
             }
         case "PREV_PAGE":
@@ -38,14 +37,12 @@ const paginationReducer = (state , action) => {
             }
             return{
                 ...state,
-                currentPage: state.currentPage,
                 ...setNewPageProducts(state , state.currentPage)
             }
 
         case "CHANGE_PAGE":
             return{
                 ...state,
-                currentPage: action.payload.page,
                 ...setNewPageProducts(state , action.payload.page)
             }
 

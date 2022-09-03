@@ -15,10 +15,12 @@ const setPaginationConfigs = (state, products) => {
         paginationBtns.push(i)
     }
 
-    return {products, paginatedProducts, paginationBtns , pagesCount}
+    return {products , paginatedProducts , paginationBtns , pagesCount}
 }
 
-const setNewPageProducts = (state , currentPage) => {
+const setNewPageProducts = (state , page) => {
+
+    const currentPage = page
 
     const products = state.products
 
@@ -27,7 +29,7 @@ const setNewPageProducts = (state , currentPage) => {
 
     const paginatedProducts = products.slice(startIndex , endIndex)
 
-    return {paginatedProducts}
+    return {paginatedProducts , currentPage}
 }
 
 export { setPaginationConfigs , setNewPageProducts }
